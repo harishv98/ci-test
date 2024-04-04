@@ -1,0 +1,40 @@
+pipeline:
+  name: Test1
+  identifier: Test1
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Test_connector
+        repoName: ci-test
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: MacOS
+            arch: Arm64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: GitClone
+                  name: GitClone_1
+                  identifier: GitClone_1
+                  spec:
+                    connectorRef: Test_connector
+                    repoName: ci-test
+                    depth: 1
+                    build:
+                      type: branch
+                      spec:
+                        branch: main
