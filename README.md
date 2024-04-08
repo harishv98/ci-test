@@ -9,6 +9,7 @@
 
   <br />
   <br />
+  <br />
 
   <a href="https://npmjs.com/package/victory">
     <img alt="weekly downloads" src="https://img.shields.io/npm/dw/victory.svg">
