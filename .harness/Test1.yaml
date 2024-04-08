@@ -44,7 +44,7 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: npm install -g wireit && npm install
+                    command: npm install wireit && npm install
               - parallel:
                   - step:
                       type: Run
