@@ -40,8 +40,23 @@ pipeline:
                         branch: main
               - step:
                   type: Run
-                  name: Run_1
+                  name: Install dependencies
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: npm run lint
+                    command: npm install -g wireit && npm install
+              - parallel:
+                  - step:
+                      type: Run
+                      name: Linting
+                      identifier: Linting
+                      spec:
+                        shell: Sh
+                        command: npm run lint
+                  - step:
+                      type: Run
+                      name: Test
+                      identifier: Test
+                      spec:
+                        shell: Sh
+                        command: npm run test
