@@ -44,7 +44,7 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: npm install wireit && npm install --legacy-peer-deps
+                    command: npm install --legacy-peer-deps
               - parallel:
                   - step:
                       type: Run
