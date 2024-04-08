@@ -1,0 +1,14 @@
+inputSet:
+  name: Trigger Input set
+  identifier: Trigger_Input_set
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Test1
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
